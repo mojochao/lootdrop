@@ -1,14 +1,14 @@
 ---
   swagger: "2.0"
   info:
-    title: SkillBrander API
-    description: SkillBrander Service Definition
-    termsOfService: http://skillbrander.com/terms/
+    title: Lootdrop API
+    description: Lootdrop Service Definition
+    termsOfService: http://lootdrop.io/terms/
     contact:
-      name: API Support
-      url: http://www.skillbrander.com/api
-      email: api@skillbrander.com
-  host: "www.skillbrander.com"
+      name: Lootdrop Support
+      url: http://www.lootdrop.io/support
+      email: support@lootdrop.io
+  host: "www.lootdrop.io"
   basepath: "api/v1"
   schemes:
     - "http"
@@ -17,67 +17,15 @@
   produces:
     - "application/json"
   paths:
-    /signup/subscribe:
-      post:
+    /greeting:
+      get:
         description: "Starts signup subscription process"
-        operationId: "signupSubscribe"
+        operationId: "getGreeting"
         produces:
           - "application/json"
-        parameters:
-          -
-            name: "firstname"
-            in: "body"
-            description: "First name of user"
-            required: true
-          -
-            name: "lastname"
-            in: "body"
-            description: "Last name of user"
-            required: true
-          -
-            name: "email"
-            in: "body"
-            description: "Email address of user"
-            required: true
         responses:
           "200":
-            description: "subscribe response"
-            schema: "#/definitions/SubscribeResponse"
-          "default":
-            description: "unexpected error"
-    /signup/unsubscribe:
-      post:
-        description: "Starts signup unsubscription process"
-        operationId: "signupUnsubscribe"
-        produces:
-          - "application/json"
-        parameters:
-          -
-            name: "email"
-            in: "body"
-            description: "Email address of user"
-            required: true
-        responses:
-          "200":
-            description: "unsubscribe response"
-            schema: "#/definitions/UnsubscribeResponse"
-          "default":
-            description: "unexpected error"
-    /signup/confirm:
-      post:
-        description: "Confirm signup process"
-        operationId: "signupConfirm"
-        produces:
-          - "application/json"
-        parameters:
-          -
-            name: "token"
-            in: "body"
-            description: "Signup confirmation token"
-            required: true
-        responses:
-          "200":
-            description: "confirmation response"
-            schema: "#/definitions/ConfirmResponse"
+            description: "greeting response"
+            schema: "#/definitions/Greeting"
           "default":
             description: "unexpected error"
